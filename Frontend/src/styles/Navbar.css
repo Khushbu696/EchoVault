@@ -1,0 +1,41 @@
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: #00ADB5;
+    color: white;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-right div {
+    margin: 0 20px;
+    padding: 5px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    position: relative;
+    font-weight: 500;
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -6px;
+    /* space between text and underline */
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+    /* expands underline left to right */
+}
