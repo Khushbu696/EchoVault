@@ -1,0 +1,79 @@
+.about,
+.about-vision {
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    width: 60%;
+    margin: 80px auto;
+    padding: 20px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.1) -6px 6px 12px;
+    transition: all 0.5s ease;
+}
+
+.about h2,
+.about-mission h2,
+.about-vision h2 {
+    font-size: 36px;
+    margin: 15px 0;
+}
+
+.about p,
+.about-vision p {
+    font-size: 22px;
+    color: #212529;
+}
+
+.about-mission {
+    margin: 80px 0;
+    padding: 20px;
+    text-align: center;
+}
+
+#content-1 {
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    width: 60%;
+    margin: 30px auto;
+    padding: 20px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.1) -6px 6px 12px;
+    transition: all 0.5s ease;
+}
+
+#content-1 h3,
+.content-2 h3 {
+    font-size: 28px;
+    color: #00ADB5;
+    margin: 15px 0;
+}
+
+#content-1 p,
+.content-2 p {
+    font-size: 22px;
+    color: #212529;
+}
+
+.about-mission-contianer {
+    width: 60%;
+    margin: 30px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content-2 {
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    width: 48%;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) -6px 6px 12px;
+    transition: all 0.5s ease;
+}
+
+#content-1:hover,
+.content-2:hover,
+.about:hover,
+.about-vision:hover {
+    box-shadow: rgba(0, 0, 0, 0.1) -10px 10px 12px;
+    transform: translateY(-10px);
+}
