@@ -23,7 +23,7 @@ function About(){
                     </p>
                 </div>
 
-            <div className="about-mission-contianer">
+            <div className="about-mission-container">
                 <div className="content-2">
                     <h3>Preserve Memories</h3>
                     <p>

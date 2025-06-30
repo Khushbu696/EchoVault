@@ -6,9 +6,9 @@ function Footer() {
             <div className="footer">
                 <h3>EchoVault</h3>
                 <div className="footer-items">
-                    <div>HOME</div>
-                    <div>ABOUT US</div>
-                    <div>CONTACT US</div>
+                    <div><a href="/" className="footer-link">HOME</a></div>
+                    <div><a href="/about" className="footer-link">ABOUT US</a></div>
+                    <div><a href="/contact" className="footer-link">CONTACT US</a></div>
                 </div>
                 <p>&copy; 2025 EchoVault. All rights reserved.</p>
             </div>

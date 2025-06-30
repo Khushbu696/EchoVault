@@ -1,6 +1,7 @@
 import '../styles/Home.css';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import { Link } from 'react-router-dom'
 
 function Home() {
   return (
@@ -14,7 +15,7 @@ function Home() {
         </p>
 
         <div className="btn">
-          Get Started
+          <Link to="/sign_up">Get Started</Link>
         </div>
       </div>
 
