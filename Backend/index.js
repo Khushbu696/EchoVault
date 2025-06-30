@@ -8,18 +8,22 @@ connectDB();
 
 const app = express();
 
+app.use(cors({
+  origin: 'http://localhost:5173',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
+app.use(express.json());
+
 const capsuleRoutes = require('./routes/capsuleRoutes');
 app.use('/api/capsules', capsuleRoutes);
 
 const authRoutes = require('./routes/authRoutes');
 app.use('/api/auth', authRoutes);
 
-const scheduleUnlocks = require('./utils/unlockScheduler');
-scheduleUnlocks(); // Start the cron job
-
-
-app.use(cors());
-app.use(express.json());
+const startScheduler = require('./utils/cronScheduler')
+startScheduler();
 
 app.get('/', (req, res) => {
   res.send('EchoVault API is running 🚀');
