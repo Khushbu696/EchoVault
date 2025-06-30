@@ -1,14 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const { protect } = require('../middleware/authMiddleware');
-const { createCapsule, getUserCapsules } = require('../controllers/capsuleController');
-const upload = require('../middleware/uploadMiddleware'); // Import upload middleware
+const { createCapsule, getUserCapsules, getCapsuleById, deleteCapsule } = require('../controllers/capsuleController');
 
-// Handle file uploads for capsule creation
-router.post('/', protect, upload.array('mediaUrls'), createCapsule);
-
-// Protect and get all user’s capsules
-router.get('/my', protect, getUserCapsules);
 router.post('/', protect, createCapsule);
+router.get('/my', protect, getUserCapsules);
+router.get('/:id', getCapsuleById);
+router.delete('/:id', protect, deleteCapsule);
 
 module.exports = router;
