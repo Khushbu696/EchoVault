@@ -1,5 +1,5 @@
 .signup {
-    background: linear-gradient(180deg, #00ADB5, #ffffff);
+    background: linear-gradient(135deg, #2E3192, #1Bffff);
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -12,15 +12,13 @@
 }
 
 .signup-form {
-    width: 30%;
+    width: 90%;
+    max-width: 400px;
     margin: 50px auto;
     padding: 30px;
-    background: rgba(255, 255, 255, 0.44);
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(6.7px);
-    -webkit-backdrop-filter: blur(6.7px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .signup-form input {
@@ -33,14 +31,19 @@
     font-size: 1rem;
 }
 
+.signup-form input:focus {
+    outline: none;
+    border-color: #2E3192;
+    box-shadow: 0 0 0 2px rgba(46, 49, 146, 0.2);
+}
+
 .signup-btn {
     font-family: 'Lato', sans-serif;
-    color: white;
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 600;
     display: block;
     border: none;
-    background-color: #00ADB5;
+    background-color: #27AE60;
     border-radius: 10px;
     width: fit-content;
     margin: 0 auto;
@@ -49,7 +52,7 @@
 }
 
 .signup-btn:hover {
-    background-color: #007F87;
+    background-color: #2ECC71;
     cursor: pointer;
 }
 

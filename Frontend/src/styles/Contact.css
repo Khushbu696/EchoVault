@@ -1,16 +1,16 @@
-.contact{
-    margin: 50px 0;
-    text-align: center;
+.contact {
+  margin: 50px 0;
+  text-align: center;
 }
 
-.contact h2{
-    font-size: 36px;
-    margin: 15px 0;
+.contact h2 {
+  font-size: 36px;
+  margin: 15px 0;
 }
 
-.contact p{
-    font-size: 22px;
-    color: #212529;
+.contact p {
+  font-size: 22px;
+  color: #212529;
 }
 
 .contact-form {
@@ -31,11 +31,13 @@
   flex: 1;
 }
 
-.contact-form input, .contact-form textarea {
+.contact-form input,
+.contact-form textarea {
   padding: 10px 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
+  width: 100%;
 }
 
 .contact-form textarea {
@@ -51,8 +53,28 @@
   font-size: 1rem;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .contact-form button:hover {
   background-color: #333;
+}
+
+/* 🔻 Responsive: Stack name fields on smaller screens */
+@media (max-width: 768px) {
+  .contact h2 {
+    font-size: 28px;
+  }
+
+  .contact p {
+    font-size: 18px;
+  }
+
+  .name-fields {
+    flex-direction: column;
+  }
+
+  .contact-form {
+    padding: 30px 15px;
+  }
 }

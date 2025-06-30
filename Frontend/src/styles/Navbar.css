@@ -2,8 +2,8 @@
     display: flex;
     justify-content: space-around;
     padding: 10px;
-    background-color: #00ADB5;
     color: white;
+    background: linear-gradient(135deg, #2E3192, #1Bffff);
 }
 
 .navbar-right {
@@ -30,12 +30,37 @@
     height: 2px;
     left: 0;
     bottom: -6px;
-    /* space between text and underline */
     background-color: white;
     transition: width 0.3s ease;
 }
 
 .navbar a:hover::after {
     width: 100%;
-    /* expands underline left to right */
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .navbar-left h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .navbar-right {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar-right div {
+        margin: 5px 0;
+    }
+
+    .navbar a {
+        font-size: 16px;
+    }
 }

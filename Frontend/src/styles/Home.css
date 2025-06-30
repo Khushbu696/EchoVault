@@ -1,6 +1,4 @@
 .home {
-  background: linear-gradient(180deg, #00ADB5, #ffffff);
-  color: #fff;
   padding: 100px 0;
   text-align: center;
 }
@@ -8,6 +6,7 @@
 .home h1 {
   margin: 30px 0;
   font-size: 44px;
+  color: #2E3192;
 }
 
 .home p {
@@ -15,8 +14,14 @@
   font-weight: 500;
 }
 
+.btn a {
+  text-decoration: none;
+  color: white;
+}
+
 .btn {
-  background-color: #00ADB5;
+  font-weight: 500;
+  background: linear-gradient(135deg, #2E3192, #1Bffff);
   border-radius: 10px;
   width: fit-content;
   margin: 30px auto;
@@ -25,7 +30,7 @@
 }
 
 .btn:hover {
-  background-color: #007F87;
+  transform: scale(1.1);
   cursor: pointer;
 }
 
@@ -37,6 +42,7 @@
 
 .home-features h2 {
   font-size: 36px;
+  color: #2E3192;
 }
 
 .home-features-container,
@@ -66,7 +72,6 @@
 }
 
 .home-features-content h3 {
-  color: #00ADB5;
   font-size: 28px;
   margin: 15px 0;
 }
@@ -91,10 +96,50 @@
 }
 
 .number {
-  background-color: #00ADB5;
+  background-color: #2E3192;
   color: white;
   border-radius: 10px;
   margin: 15px 0;
   padding: 5px 10px;
   width: fit-content;
+}
+
+@media (max-width: 768px) {
+  .home h1 {
+    font-size: 32px;
+  }
+
+  .home p,
+  #home-exp {
+    font-size: 18px;
+    width: 90%;
+  }
+
+  .home-features-container,
+  .home-experience-container {
+    flex-direction: column;
+    gap: 30px;
+    margin: 30px 0;
+  }
+
+  .home-features-content,
+  .home-experience-content {
+    width: 90%;
+    font-size: 18px;
+    padding: 15px;
+  }
+
+  .home-experience h2,
+  .home-features h2 {
+    font-size: 28px;
+  }
+
+  .home-experience-content .number {
+    margin: 10px auto;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
 }
