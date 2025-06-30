@@ -1,0 +1,19 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+}
+
+h1, h2, h3, h4{
+    font-family: 'Playfair Display', serif;
+}
+
+/* h1{ font-size: 44px; }
+h2{ font-size: 36px; }
+h3{ font-size: 28px; }
+h4{ font-size: 24px; }
+p{font-size: 22px; } */
