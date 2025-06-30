@@ -11,7 +11,7 @@ const transporter = nodemailer.createTransport({
 
 const sendCapsuleEmail = async (capsule) => {
   console.log(capsule);
-  const capsuleLink = `https://your-frontend-domain.com/capsule/${capsule._id}`;
+  const capsuleLink = `https://echovault-frontend.netlify.app/capsule/${capsule._id}`; //forntend deployed url 
   const passcodeText = capsule.isPrivate
     ? `<p><strong>Security Code:</strong> ${capsule.passcode}</p>`
     : '';

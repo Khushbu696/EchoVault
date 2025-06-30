@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'http://localhost:5000/api', // update later when deployed
+  baseURL: 'https://echovault-backend-jtnq.onrender.com/api', //backend deployed url
 });
 
 // Attach token to headers automatically
