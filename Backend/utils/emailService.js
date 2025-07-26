@@ -10,11 +10,7 @@ const transporter = nodemailer.createTransport({
 });
 
 const sendCapsuleEmail = async (capsule) => {
-  console.log(capsule);
-  const capsuleLink = `https://echovault-frontend.netlify.app/capsule/${capsule._id}`; //forntend deployed url 
-  const passcodeText = capsule.isPrivate
-    ? `<p><strong>Security Code:</strong> ${capsule.passcode}</p>`
-    : '';
+  const capsuleLink = `https://echovault-frontend.netlify.app/capsule/${capsule._id}`;
 
   const mailOptions = {
     from: `"EchoVault" <${process.env.EMAIL_USER}>`,
@@ -24,7 +20,6 @@ const sendCapsuleEmail = async (capsule) => {
       <h2>Hello,</h2>
       <p>You have received a time capsule!</p>
       <p><a href="${capsuleLink}">Click here to view it</a></p>
-      ${passcodeText}
       <p>Sent via <strong>EchoVault</strong>.</p>
     `
   };
@@ -32,4 +27,4 @@ const sendCapsuleEmail = async (capsule) => {
   await transporter.sendMail(mailOptions);
 };
 
-module.exports =  sendCapsuleEmail ;
+module.exports = sendCapsuleEmail;

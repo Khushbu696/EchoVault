@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import API from '../services/api';
 import { useNavigate, Link } from 'react-router-dom';
-import '../styles/Dashboard.css'
+import '../styles/Dashboard.css';
 
 function Dashboard() {
   const [capsules, setCapsules] = useState([]);
@@ -68,7 +68,11 @@ function Dashboard() {
               </p>
               <p className="capsule-meta">
                 <strong>Unlocks:</strong>{' '}
-                {new Date(capsule.unlockDate).toLocaleString()}
+                {new Date(capsule.unlockDate).toLocaleString('en-IN', {
+                  timeZone: 'Asia/Kolkata',
+                  dateStyle: 'medium',
+                  timeStyle: 'short'
+                })}
               </p>
               <p className={capsule.isUnlocked ? 'delivered' : 'scheduled'}>
                 Status: {capsule.isUnlocked ? 'Delivered' : 'Scheduled'}
@@ -78,7 +82,9 @@ function Dashboard() {
                 View
               </Link>
 
-              <button className='delete-btn' onClick={() => handleDelete(capsule._id)}>Delete</button>
+              <button className="delete-btn" onClick={() => handleDelete(capsule._id)}>
+                Delete
+              </button>
             </div>
           ))}
         </div>

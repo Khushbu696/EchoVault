@@ -8,55 +8,41 @@ function CapsuleViewer() {
     const [capsule, setCapsule] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
-    const [enteredPasscode, setEnteredPasscode] = useState('');
-    const [isAuthorized, setIsAuthorized] = useState(false);
 
     useEffect(() => {
         const fetchCapsule = async () => {
             try {
                 const res = await API.get(`/capsules/${id}`);
                 setCapsule(res.data);
-                if (!res.data.isPrivate) {
-                    setIsAuthorized(true);
-                }
                 setLoading(false);
             } catch (err) {
-                setError('Capsule not found.');
+                setError('Capsule not found or has been deleted.');
                 setLoading(false);
             }
         };
         fetchCapsule();
     }, [id]);
 
-    const handleVerifyPasscode = () => {
-        if (enteredPasscode === capsule.passcode) {
-            setIsAuthorized(true);
-        } else {
-            alert('Incorrect passcode.');
-        }
-    };
-
     if (loading) return <div>Loading...</div>;
     if (error) return <div>{error}</div>;
     if (!capsule) return null;
 
+    const currentTime = new Date();
+    const unlockTime = new Date(capsule.unlockDate);
+    const isUnlocked = unlockTime <= currentTime;
+
     return (
         <div className="capsule-viewer">
-            {capsule.isPrivate && !isAuthorized ? (
-                <div className="passcode-section">
-                    <h3>This capsule is private 🔒</h3>
-                    <input
-                        type="text"
-                        placeholder="Enter passcode"
-                        value={enteredPasscode}
-                        onChange={(e) => setEnteredPasscode(e.target.value)}
-                    />
-                    <button onClick={handleVerifyPasscode}>Unlock</button>
+            {!isUnlocked ? (
+                <div className="locked-message">
+                    <h3>⏳ This capsule is scheduled to unlock on:</h3>
+                    <p>{unlockTime.toLocaleString()}</p>
                 </div>
             ) : (
                 <div className="capsule-content">
                     <h2>{capsule.title}</h2>
                     <p>{capsule.message}</p>
+
                     {capsule.mediaUrls.length > 0 && (
                         <div className="media-gallery">
                             {capsule.mediaUrls.map((url, i) =>
@@ -68,7 +54,8 @@ function CapsuleViewer() {
                             )}
                         </div>
                     )}
-                    <p><strong>Unlocks on:</strong> {new Date(capsule.unlockDate).toLocaleString()}</p>
+
+                    <p><strong>Unlocked on:</strong> {unlockTime.toLocaleString()}</p>
                 </div>
             )}
         </div>

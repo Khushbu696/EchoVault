@@ -1,6 +1,7 @@
 .capsule-viewer{
   background: linear-gradient(135deg, #2E3192, #1Bffff);
   padding: 40px;
+  height: 100vh;
 }
 
 .capsule-content {
